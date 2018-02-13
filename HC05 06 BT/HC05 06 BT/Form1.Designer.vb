@@ -22,6 +22,7 @@ Partial Class Form1
     '請勿使用程式碼編輯器進行修改。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -45,6 +46,11 @@ Partial Class Form1
         Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -263,11 +269,40 @@ Partial Class Form1
         Me.Label8.TabIndex = 14
         Me.Label8.Text = "選擇藍芽模組"
         '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(364, 189)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(171, 23)
+        Me.ProgressBar1.TabIndex = 15
+        '
+        'Button5
+        '
+        Me.Button5.Font = New System.Drawing.Font("新細明體", 8.0!)
+        Me.Button5.Location = New System.Drawing.Point(364, 214)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(172, 23)
+        Me.Button5.TabIndex = 16
+        Me.Button5.Text = "日誌"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.ItemHeight = 19
+        Me.ListBox1.Location = New System.Drawing.Point(13, 259)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(523, 213)
+        Me.ListBox1.TabIndex = 17
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(544, 246)
+        Me.ClientSize = New System.Drawing.Size(548, 481)
+        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Button4)
@@ -288,6 +323,8 @@ Partial Class Form1
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(5)
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(564, 520)
+        Me.MinimumSize = New System.Drawing.Size(564, 285)
         Me.Name = "Form1"
         Me.Text = "藍芽設定程式"
         Me.Panel1.ResumeLayout(False)
@@ -321,4 +358,9 @@ Partial Class Form1
     Friend WithEvents RadioButton4 As RadioButton
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label8 As Label
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents Button5 As Button
+    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents SerialPort1 As IO.Ports.SerialPort
 End Class
