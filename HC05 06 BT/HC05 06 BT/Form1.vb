@@ -20,10 +20,12 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If Button1.Text = "開啟通訊埠" Then
+
+            com.ReadTimeout = 2000
             With com
                 .PortName = ComboBox1.SelectedItem
                 .BaudRate = ComboBox2.SelectedItem
-                .ReadTimeout = 2000
+
             End With
             Try
                 com.Open()
@@ -31,18 +33,21 @@
                 ComboBox1.Enabled = False
                 ComboBox2.Enabled = False
             Catch ex As Exception
+
                 MsgBox(ex.Message)
                 Button1.Text = "開啟通訊埠"
                 ComboBox1.Enabled = True
                 ComboBox2.Enabled = True
                 Exit Sub
                 Try
+
                     com.Close()
                 Catch eax As Exception
                     ListBox1.Items.Add(Date.Now + " 錯誤" + eax.Message)
                 End Try
             End Try
         Else
+
             Button3.Enabled = False
             com.Close()
             ComboBox1.Enabled = True
@@ -52,6 +57,7 @@
     End Sub
     Dim laststr As String
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+
 
         Button3.Enabled = False
         If RadioButton3.Checked Or RadioButton4.Checked Then
@@ -224,4 +230,7 @@ line1:
             Me.Height = 520
         End If
     End Sub
+
+
+
 End Class
