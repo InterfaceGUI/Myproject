@@ -27,7 +27,6 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label3 = New System.Windows.Forms.Label()
@@ -38,12 +37,24 @@ Partial Class Form1
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(127, 291)
+        Me.Button1.Location = New System.Drawing.Point(12, 184)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(148, 52)
         Me.Button1.TabIndex = 0
@@ -52,9 +63,9 @@ Partial Class Form1
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(310, 360)
+        Me.Label1.Location = New System.Drawing.Point(724, 413)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(84, 22)
+        Me.Label1.Size = New System.Drawing.Size(10, 10)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Label1"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -62,7 +73,7 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(127, 22)
+        Me.Button2.Location = New System.Drawing.Point(12, 15)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(148, 30)
         Me.Button2.TabIndex = 3
@@ -71,31 +82,19 @@ Partial Class Form1
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(127, 58)
+        Me.Button3.Location = New System.Drawing.Point(12, 51)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(148, 30)
         Me.Button3.TabIndex = 3
         Me.Button3.Text = "伺服器IP設置"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("新細明體", 18.0!)
-        Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(48, 264)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(318, 24)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "**上方都設定過才可按啟動**"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
         'Button4
         '
         Me.Button4.Enabled = False
-        Me.Button4.Location = New System.Drawing.Point(12, 383)
+        Me.Button4.Location = New System.Drawing.Point(12, 272)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(116, 37)
+        Me.Button4.Size = New System.Drawing.Size(148, 37)
         Me.Button4.TabIndex = 4
         Me.Button4.Text = "廣播測試紐"
         Me.Button4.UseVisualStyleBackColor = True
@@ -106,7 +105,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(151, 359)
+        Me.Label3.Location = New System.Drawing.Point(26, 239)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(59, 19)
         Me.Label3.TabIndex = 5
@@ -116,7 +115,7 @@ Partial Class Form1
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label4.Location = New System.Drawing.Point(202, 359)
+        Me.Label4.Location = New System.Drawing.Point(91, 239)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 19)
         Me.Label4.TabIndex = 6
@@ -124,9 +123,9 @@ Partial Class Form1
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(243, 158)
+        Me.TextBox1.Location = New System.Drawing.Point(118, 127)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(91, 30)
+        Me.TextBox1.Size = New System.Drawing.Size(59, 30)
         Me.TextBox1.TabIndex = 7
         Me.TextBox1.Text = "30"
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -134,16 +133,16 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(61, 164)
+        Me.Label5.Location = New System.Drawing.Point(13, 132)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(179, 19)
+        Me.Label5.Size = New System.Drawing.Size(99, 19)
         Me.Label5.TabIndex = 8
-        Me.Label5.Text = "自動廣播時間設定:"
+        Me.Label5.Text = "時間設定:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(338, 163)
+        Me.Label6.Location = New System.Drawing.Point(182, 132)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(49, 19)
         Me.Label6.TabIndex = 9
@@ -152,7 +151,7 @@ Partial Class Form1
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(186, 391)
+        Me.CheckBox1.Location = New System.Drawing.Point(12, 324)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(15, 14)
         Me.CheckBox1.TabIndex = 10
@@ -161,7 +160,7 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(245, 191)
+        Me.Label7.Location = New System.Drawing.Point(120, 160)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(0, 19)
         Me.Label7.TabIndex = 11
@@ -170,21 +169,121 @@ Partial Class Form1
         '
         Me.Timer2.Interval = 60000
         '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(12, 99)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(108, 23)
+        Me.CheckBox2.TabIndex = 13
+        Me.CheckBox2.Text = "自動廣播"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(252, 4)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(128, 23)
+        Me.CheckBox3.TabIndex = 14
+        Me.CheckBox3.Text = "啟用跑馬燈"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.ListBox1)
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.Button6)
+        Me.Panel1.Controls.Add(Me.TextBox3)
+        Me.Panel1.Controls.Add(Me.TextBox2)
+        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.Button5)
+        Me.Panel1.Location = New System.Drawing.Point(252, 28)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(482, 382)
+        Me.Panel1.TabIndex = 15
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(434, 15)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(109, 19)
+        Me.Label2.TabIndex = 16
+        Me.Label2.Text = "跑馬燈設置"
+        '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(117, 94)
+        Me.Button5.Location = New System.Drawing.Point(372, 327)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(170, 32)
-        Me.Button5.TabIndex = 12
-        Me.Button5.Text = "如果設定過點我"
+        Me.Button5.Size = New System.Drawing.Size(103, 46)
+        Me.Button5.TabIndex = 0
+        Me.Button5.Text = "啟動"
         Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label8.Location = New System.Drawing.Point(8, 7)
+        Me.Label8.Name = "Label8"
+        Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label8.Size = New System.Drawing.Size(115, 30)
+        Me.Label8.TabIndex = 1
+        Me.Label8.Text = "跑馬燈速度"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(120, 7)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 30)
+        Me.TextBox2.TabIndex = 2
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(8, 60)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(360, 30)
+        Me.TextBox3.TabIndex = 3
+        '
+        'Button6
+        '
+        Me.Button6.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Button6.Location = New System.Drawing.Point(372, 60)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(103, 30)
+        Me.Button6.TabIndex = 4
+        Me.Button6.Text = "新增"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.ItemHeight = 19
+        Me.ListBox1.Location = New System.Drawing.Point(8, 103)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(360, 270)
+        Me.ListBox1.TabIndex = 5
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(226, 13)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(109, 19)
+        Me.Label9.TabIndex = 16
+        Me.Label9.Text = "單位:毫秒 "
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(428, 432)
-        Me.Controls.Add(Me.Button5)
+        Me.ClientSize = New System.Drawing.Size(738, 413)
+        Me.Controls.Add(Me.CheckBox3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Label6)
@@ -195,13 +294,15 @@ Partial Class Form1
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Margin = New System.Windows.Forms.Padding(5)
+        Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.Text = "Discord-遊戲伺服器狀態"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -211,7 +312,6 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
-    Friend WithEvents Label2 As Label
     Friend WithEvents Button4 As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label3 As Label
@@ -222,5 +322,16 @@ Partial Class Form1
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents Timer3 As Timer
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label2 As Label
     Friend WithEvents Button5 As Button
+    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents Button6 As Button
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
 End Class

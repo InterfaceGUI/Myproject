@@ -3,8 +3,9 @@ Imports Discord.WebSocket
 Imports System.ComponentModel
 Imports System.Net.Sockets
 Imports System.Net
-Imports WindowsApp12.eMZi.Gaming.Minecraft
-Imports Discord.Commands.ModuleBase
+Imports DGSS.eMZi.Gaming.Minecraft
+
+
 
 
 Public Class Form1
@@ -42,11 +43,16 @@ Public Class Form1
                 Label4.Text = "已啟動"
                 Label4.ForeColor = Drawing.Color.Green
                 Button4.Enabled = True
-                Timer1.Enabled = True
-                Timer2.Enabled = True
-                Timer1.Interval = (Val(TextBox1.Text) * 60) * 1000
-                tim = (Timer1.Interval / 60) / 1000
-                Label7.Text = "剩餘" & tim & "分鐘"
+
+
+                If CheckBox2.Checked Then
+                    Timer1.Enabled = True
+                    Timer2.Enabled = True
+                    Timer1.Interval = (Val(TextBox1.Text) * 60) * 1000
+                    tim = (Timer1.Interval / 60) / 1000
+                    Label7.Text = "剩餘" & tim & "分鐘"
+                End If
+
             Catch ex As Exception
                 Button1.Text = "啟動"
                 Label4.Text = "錯誤"
@@ -77,8 +83,13 @@ Public Class Form1
         })
         AddHandler discord.MessageReceived, AddressOf onMsg
         CheckBox1.Text = "開啟手動查詢" & vbCrLf & "Discord命令:,info"
-
-
+        Module1.form3 = True
+        Module1.form2 = True
+        Form2.Show()
+        Form3.Show()
+        Module1.form2 = False
+        Module1.form3 = False
+        Panel1.Enabled = False
     End Sub
 
 
@@ -202,10 +213,6 @@ Public Class Form1
         End Try
         con1 = 1
 
-
-
-
-
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -225,7 +232,7 @@ Public Class Form1
         Label7.Text = "剩餘" & tim & "分鐘"
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs)
         Module1.form3 = True
         Module1.form2 = True
         Form2.Show()
@@ -234,5 +241,17 @@ Public Class Form1
         Module1.form3 = False
     End Sub
 
+    Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
+        Panel1.Enabled = IIf(CheckBox3.Checked, True, False)
 
+    End Sub
+
+    Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Button5.Click
+        Timer3.Enabled = Not Timer3.Enabled
+        Button5.Text = IIf(Timer3.Enabled, "停止", "啟動")
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        ListBox1.Items.Add(TextBox3.Text)
+    End Sub
 End Class
