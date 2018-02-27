@@ -5,9 +5,6 @@ Imports System.Net.Sockets
 Imports System.Net
 Imports DGSS.eMZi.Gaming.Minecraft
 
-
-
-
 Public Class Form1
     Public token As String
     Public servername As String
@@ -35,8 +32,8 @@ Public Class Form1
     End Function
 
     Private Async Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
-        Button1.Text = IIf(Button1.Text = "啟動", "停止", "啟動")
-        If Button1.Text <> "啟動" Then
+        Button1.Text = IIf(Button1.Text = "啟動BOT", "停止", "啟動BOT")
+        If Button1.Text <> "啟動BOT" Then
             Try
                 Await discord.LoginAsync(TokenType.Bot, token)
                 Await discord.StartAsync()
@@ -62,7 +59,7 @@ Public Class Form1
                 Timer1.Enabled = False
                 Timer2.Enabled = False
             End Try
-            discord.SetGameAsync("遊戲伺服器狀態BOT")
+            'discord.SetGameAsync("遊戲伺服器狀態BOT")
         Else
 
             Await discord.LogoutAsync()
@@ -191,22 +188,16 @@ Public Class Form1
         Form3.Show()
     End Sub
     Private Async Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+
         serino()
         Dim embed As New EmbedBuilder With {
-                                                .Title = "各伺服器狀態",
-                                                .Description = info,
-                                                .Color = New Color(0, 255, 0)
-                                                }
+                                             .Title = "各伺服器狀態",
+                                             .Description = info,
+                                             .Color = New Color(0, 255, 0)
+                                             }
         Try
-            If con1 = 0 Then
-                Messa = Await discord.GetGuild(BServerID).GetTextChannel(BchannlID).SendMessageAsync("", False, embed)
-            Else
-                Await Messa.DeleteAsync()
-                Messa = Await discord.GetGuild(BServerID).GetTextChannel(BchannlID).SendMessageAsync("", False, embed)
 
-
-
-            End If
+            Messa = Await discord.GetGuild(BServerID).GetTextChannel(BchannlID).SendMessageAsync("", False, embed)
 
         Catch ex As Exception
             MsgBox(ex.Message & vbCrLf & vbCrLf & "通常是伺服器或頻道ID填寫錯誤",, "錯誤")
@@ -247,11 +238,46 @@ Public Class Form1
     End Sub
 
     Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Button5.Click
+        Timer3.Interval = Val(TextBox2.Text)
+        For i = 0 To ListBox1.Items.Count - 1
+            listtext &= ListBox1.Items.Item(i)
+            listtext &= Space(5)
+        Next
+        While Len(listtext) Mod 8 <> 0
+            listtext &= Space(1)
+        End While
         Timer3.Enabled = Not Timer3.Enabled
         Button5.Text = IIf(Timer3.Enabled, "停止", "啟動")
+        TextBox2.Enabled = IIf(Timer3.Enabled, False, True)
+        t3 = 0
+
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Button6_Click(ByVal sender As Object, e As EventArgs) Handles Button6.Click
         ListBox1.Items.Add(TextBox3.Text)
+        TextBox3.Text = ""
+    End Sub
+    Dim listtext As String
+    Dim t3 As Int16 = 0
+
+    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
+        t3 += 1
+        Dim temppp = Mid(listtext, t3, 8)
+        'discord.SetGameAsync(temppp,,)
+        discord.GetGuild(BServerID).GetUser(discord.CurrentUser.Id).ModifyAsync(Function(x)
+                                                                                    x.Nickname = "MySuperBot"
+                                                                                End Function)
+
+    End Sub
+
+    Private Sub TextBox3_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox3.KeyDown
+        If e.KeyCode = Keys.KeyCode.Enter And TextBox3.Text <> "" Then
+            ListBox1.Items.Add(TextBox3.Text)
+            TextBox3.Text = ""
+        End If
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        ListBox1.Items.Remove(ListBox1.SelectedItem)
     End Sub
 End Class

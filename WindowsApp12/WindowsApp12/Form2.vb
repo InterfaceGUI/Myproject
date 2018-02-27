@@ -1,13 +1,13 @@
 ﻿Imports System.ComponentModel
 Imports System.IO
+
 Public Class Form2
     Dim sw As StreamWriter
     Dim sr As StreamReader
     Dim list As String
 
-
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        '儲存兼設定
         Try
             BServerID = TextBox2.Text
             BchannlID = TextBox3.Text
@@ -24,7 +24,7 @@ Public Class Form2
             MsgBox("填入正確的字元",, "錯誤")
             Exit Sub
         End Try
-        Try
+        Try '讀檔部分
             sw = New StreamWriter(CurDir() & "\data\BotToken.inf")
             sw.Write("")
             sw.Write(list)
@@ -48,9 +48,7 @@ Public Class Form2
             If File.Exists(CurDir() & "\data\BotToken.inf") = False Then
 
                 If Directory.Exists(CurDir() & "\data\") = False Then
-
                     Directory.CreateDirectory(CurDir() & "\data\")
-
                 End If
 
                 sw = File.CreateText(CurDir() & "\data\BotToken.inf")
@@ -58,15 +56,13 @@ Public Class Form2
 
             ElseIf File.Exists(CurDir() & "\data\BotToken.inf") = True Then
 
-
                 sr = New StreamReader(CurDir() & "\data\BotToken.inf")
                 Dim temp = sr.ReadToEnd()
-
                 TextBox1.Text = Mid(temp, 1, InStr(temp, ";") - 1)
                 TextBox2.Text = Mid(temp, InStr(temp, ";") + 1, InStr(temp, "[") - InStr(temp, ";") - 1)
                 TextBox3.Text = Mid(temp, InStr(temp, "[") + 1, Len(temp) - InStr(temp, "["))
-
                 sr.Close()
+
             Else
                 MsgBox("關閉後可能無法儲存目前設定值", 0 + 16, "未知錯誤")
             End If
@@ -120,4 +116,6 @@ Public Class Form2
 
         End Try
     End Sub
+
+
 End Class

@@ -41,14 +41,17 @@ Partial Class Form1
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -58,7 +61,7 @@ Partial Class Form1
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(148, 52)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "啟動"
+        Me.Button1.Text = "啟動BOT"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Label1
@@ -179,6 +182,9 @@ Partial Class Form1
         Me.CheckBox2.Text = "自動廣播"
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
+        'Timer3
+        '
+        '
         'CheckBox3
         '
         Me.CheckBox3.AutoSize = True
@@ -194,6 +200,7 @@ Partial Class Form1
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.ListBox1)
         Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.Button7)
         Me.Panel1.Controls.Add(Me.Button6)
         Me.Panel1.Controls.Add(Me.TextBox3)
         Me.Panel1.Controls.Add(Me.TextBox2)
@@ -203,59 +210,6 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(482, 382)
         Me.Panel1.TabIndex = 15
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(434, 15)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(109, 19)
-        Me.Label2.TabIndex = 16
-        Me.Label2.Text = "跑馬燈設置"
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(372, 327)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(103, 46)
-        Me.Button5.TabIndex = 0
-        Me.Button5.Text = "啟動"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Label8
-        '
-        Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label8.Location = New System.Drawing.Point(8, 7)
-        Me.Label8.Name = "Label8"
-        Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label8.Size = New System.Drawing.Size(115, 30)
-        Me.Label8.TabIndex = 1
-        Me.Label8.Text = "跑馬燈速度"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(120, 7)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 30)
-        Me.TextBox2.TabIndex = 2
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(8, 60)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(360, 30)
-        Me.TextBox3.TabIndex = 3
-        '
-        'Button6
-        '
-        Me.Button6.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Button6.Location = New System.Drawing.Point(372, 60)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(103, 30)
-        Me.Button6.TabIndex = 4
-        Me.Button6.Text = "新增"
-        Me.Button6.UseVisualStyleBackColor = True
         '
         'ListBox1
         '
@@ -275,11 +229,96 @@ Partial Class Form1
         Me.Label9.TabIndex = 16
         Me.Label9.Text = "單位:毫秒 "
         '
+        'Button7
+        '
+        Me.Button7.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Button7.Location = New System.Drawing.Point(372, 103)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(103, 64)
+        Me.Button7.TabIndex = 4
+        Me.Button7.Text = "移除所選項目"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Button6.Location = New System.Drawing.Point(372, 60)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(103, 30)
+        Me.Button6.TabIndex = 4
+        Me.Button6.Text = "新增"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(8, 60)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(360, 30)
+        Me.TextBox3.TabIndex = 3
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(120, 7)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 30)
+        Me.TextBox2.TabIndex = 2
+        Me.TextBox2.Text = "500"
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label8
+        '
+        Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label8.Location = New System.Drawing.Point(8, 7)
+        Me.Label8.Name = "Label8"
+        Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label8.Size = New System.Drawing.Size(115, 30)
+        Me.Label8.TabIndex = 1
+        Me.Label8.Text = "跑馬燈速度"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(372, 327)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(103, 46)
+        Me.Button5.TabIndex = 0
+        Me.Button5.Text = "啟動"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(434, 15)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(109, 19)
+        Me.Label2.TabIndex = 16
+        Me.Label2.Text = "跑馬燈設置"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(143, 383)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(79, 19)
+        Me.Label10.TabIndex = 17
+        Me.Label10.Text = "Label10"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(423, 1)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(129, 19)
+        Me.Label11.TabIndex = 18
+        Me.Label11.Text = "測試中誤用!!"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(738, 413)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.CheckBox3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
@@ -334,4 +373,7 @@ Partial Class Form1
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label11 As Label
 End Class
