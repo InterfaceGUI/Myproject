@@ -265,7 +265,7 @@ Public Class Form1
         Dim temppp = Mid(listtext, t3, 8)
         'discord.SetGameAsync(temppp,,)
         discord.GetGuild(BServerID).GetUser(discord.CurrentUser.Id).ModifyAsync(Function(x)
-                                                                                    x.Nickname = "MySuperBot"
+                                                                                      x.Nickname = temppp
                                                                                 End Function)
 
     End Sub
